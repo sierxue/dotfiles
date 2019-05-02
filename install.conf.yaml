@@ -1,0 +1,25 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.Rprofile:
+    ~/.bash_logout:
+    ~/.bashrc:
+    ~/.config/zathura:
+    ~/.dotfiles: ''
+    ~/.gitconfig:
+    ~/.gitconfig_global:
+    ~/.gvimrc:
+    ~/.ignore:
+    ~/.nutstore/db/customExtRules.conf: nutstore/db/customExtRules.conf
+    ~/.profile:
+    ~/.vim/after: vim/after
+    ~/.vimrc:
+    ~/.zshrc:
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
