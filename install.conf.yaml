@@ -9,15 +9,13 @@
     ~/.Rprofile:
     ~/.bash_logout:
     ~/.bashrc:
-    ~/.config/zathura:
+    ~/.config/zathura: config/zathura
     ~/.dotfiles: ''
     ~/.gitconfig:
-    ~/.gitconfig_global:
     ~/.gvimrc:
-    ~/.ignore:
     ~/.nutstore/db/customExtRules.conf: nutstore/db/customExtRules.conf
     ~/.profile:
-    ~/.vim/after: vim/after
+    ~/.vim:
     ~/.vimrc:
     ~/.zshrc:
 
