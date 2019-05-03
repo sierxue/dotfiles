@@ -1,1 +1,1 @@
-/home/a/repo/dotfiles-local/vim/after/plugin/abolish.vim
+/home/a/Documents/dotfiles-local/vim/after/plugin/abolish.vim
