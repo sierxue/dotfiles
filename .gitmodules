@@ -1,3 +1,6 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
+[submodule "gnome-shell-extensions-negesti"]
+	path = gnome-shell-extensions-negesti
+	url = https://github.com/negesti/gnome-shell-extensions-negesti
