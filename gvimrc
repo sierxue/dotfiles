@@ -32,7 +32,7 @@ else
     set fileencoding=utf-8
 endif
 
-set guifont=Monospace\ 14
+set guifont=Monospace\ 13
 
 " 防止特殊符号无法正常显示
 set ambiwidth=double
