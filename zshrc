@@ -121,3 +121,7 @@ alias piu='pip3 install --user'
 alias gg='git gui'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH; export PATH
+MANPATH=/usr/local/texlive/2019/texmf-dist/doc/man:$MANPATH; export MANPATH
+INFOPATH=/usr/local/texlive/2019/texmf-dist/doc/info:$INFOPATH; export INFOPATH
