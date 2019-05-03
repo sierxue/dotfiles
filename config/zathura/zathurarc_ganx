@@ -16,7 +16,7 @@ set incremental-search true
 
 # settings
 set window-height 1030
-set window-width 988
+set window-width 971
 set adjust-open width
 set show-scrollbars false
 set first-page-column 2
