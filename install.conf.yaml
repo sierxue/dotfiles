@@ -16,8 +16,10 @@
     ~/.local/share/gnome-shell/extensions/putWindow@clemens.lab21.orggnome-shell-extensions-negesti: gnome-shell-extensions-negesti
     ~/.nutstore/db/customExtRules.conf: nutstore/db/customExtRules.conf
     ~/.profile:
+    ~/.shell:
     ~/.vim:
     ~/.vimrc:
+    ~/.zsh:
     ~/.zshrc:
 
 - shell:
