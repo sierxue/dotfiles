@@ -1,0 +1,32 @@
+# Allow local customizations in the .gitconfig_local file
+[include]
+	path = ~/.gitconfig_local
+[core]
+	excludesfile = ~/.gitignore_global
+[push]
+	default = simple
+[gui]
+	encoding = utf-8
+	spellingdictionary = none
+	editor = atom
+	fontui = -family \"Courier 10 Pitch\" -size 14 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"Courier 10 pitch\" -size 15 -weight normal -slant roman -underline 0 -overstrike 0
+[merge]
+	tool = meld
+	took = meld
+[pull]
+	rebase = true
+[alias]
+	aci = "!f(){ git add -A && git commit -am \"$1\"; }; f"
+	cfg = config
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	pl = pull
+	ps = push
+	df = diff
+	dc = diff
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	brd = "!git push --delete origin $1; git branch -d $1"
