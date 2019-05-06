@@ -25,6 +25,7 @@ source ~/.shell/external.sh
 
 # Aliases
 source ~/.shell/aliases.sh
+source ~/.shell/aliases_local.sh
 
 # Custom prompt
 source ~/.zsh/prompt.zsh

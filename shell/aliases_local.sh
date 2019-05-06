@@ -1,0 +1,1 @@
+/home/a/Documents/dotfiles-local/shell/aliases_local.sh
