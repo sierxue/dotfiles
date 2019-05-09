@@ -18,7 +18,6 @@
     ~/.nutstore/db/customExtRules.conf: nutstore/db/customExtRules.conf
     ~/.profile:
     ~/.shell:
-    ~/.vim:
     ~/.vimrc:
     ~/.zsh:
     ~/.zshrc:
