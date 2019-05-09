@@ -7,6 +7,7 @@
 
 - link:
     ~/.Rprofile:
+    ~/.agignore:
     ~/.bash_logout:
     ~/.bashrc:
     ~/.config/zathura: config/zathura
