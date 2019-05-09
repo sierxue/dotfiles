@@ -1,1 +1,0 @@
-/home/a/Documents/dotfiles-local/vim/after/plugin/abolish.vim
