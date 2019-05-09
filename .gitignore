@@ -1,4 +1,6 @@
 # Exclude files
+*.swp
+/shell/aliases_local.sh
 
 # Exclude folders
 /vim/*
