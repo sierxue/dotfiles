@@ -178,8 +178,8 @@ endif
 " Basic editing config
 "---------------------
 
-" Solve the coding problem of the console
-"language messages zh_CN.utf-8
+"Solve the coding problem of the console
+language messages zh_CN.utf-8
 
 " Terminal coding
 set termencoding=utf-8

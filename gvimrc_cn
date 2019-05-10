@@ -27,7 +27,7 @@ command! Smaller :let &guifont = substitute(&guifont, '\d\+$', '\=submatch(0)-1'
 set fileencodings=ucs-bom,utf-8,gbk,cp936,gb2312,big5,euc-jp,euc-kr,latin1
 
 if has("win32")
-    set fileencoding=english
+    set fileencoding=chinese
 else
     set fileencoding=utf-8
 endif
