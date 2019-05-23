@@ -245,8 +245,8 @@ let g:vimtex_view_method = 'zathura'
 " https://castel.dev/post/lecture-notes-1/
 " https://app.yinxiang.com/shard/s22/nl/4928451/de0f809b-c0bc-4774-b459-683696356703
 let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
+" set conceallevel=1
+" let g:tex_conceal='abdmg'
 
 " maralla/completor configuration
 " https://github.com/maralla/completor.vim/issues/41
