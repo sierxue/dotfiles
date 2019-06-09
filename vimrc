@@ -2,6 +2,10 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" https://zhuanlan.zhihu.com/p/68191151
+" https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
+set nomodeline
+
 "------------------
 " Load vim-plug
 "------------------
@@ -73,6 +77,12 @@ autocmd! bufwritepost .vimrc source %
 "---------------------
 " Key mapping
 "---------------------
+
+" Neil - Practical Vim, Second Edition.pdf P. 85
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
 
 " - | reloading vimrc, sourcing it
 " https://stackoverflow.com/questions/1025762/cursor-disappears-in-vim-when-switching-windows-between-vertical-and-horizontal
