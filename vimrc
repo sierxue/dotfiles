@@ -6,6 +6,12 @@ set nocompatible
 " https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
 set nomodeline
 
+"------------------------------
+" Load plugin shipped with vim
+"------------------------------
+
+filetype plugin on
+
 "------------------
 " Load vim-plug
 "------------------
@@ -276,6 +282,17 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 " Use Tab to trigger completion (disable auto trigger)
 let g:completor_auto_trigger = 1
 " inoremap <expr> <Tab> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
+
+" netrw https://shapeshed.com/vim-netrw/
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+" augroup ProjectDrawer
+"   autocmd!
+"   autocmd VimEnter * :Vexplore
+" augroup END
 
 " sillybun/vim-repl/ configuration
 " ganx: revise default <leader>r to <leader>rt
