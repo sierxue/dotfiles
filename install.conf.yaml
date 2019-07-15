@@ -10,6 +10,8 @@
     ~/.agignore:
     ~/.bash_logout:
     ~/.bashrc:
+    ~/.config/bspwm: config/bspwm
+    ~/.config/sxhkd: config/sxhkd
     ~/.config/zathura: config/zathura
     ~/.dotfiles: ''
     ~/.gitconfig:

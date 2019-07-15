@@ -93,6 +93,7 @@ nnoremap <silent> ]B :blast<CR>
 " - | reloading vimrc, sourcing it
 " https://stackoverflow.com/questions/1025762/cursor-disappears-in-vim-when-switching-windows-between-vertical-and-horizontal
 nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>sg :source $MYGVIMRC<CR>
 "Remove all trailing whitespace by pressing F6
 nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " Mappings related to <Esc> https://news.ycombinator.com/item?id=13100718
@@ -161,7 +162,7 @@ command! -bang -nargs=* -complete=tag S call SearchMultiLine(<bang>0, <f-args>)|
 " 'cindent' is on in C files, etc.
 " Also load indent files, to automatically do language-dependent indenting.
 " Revert with ":filetype off".
-filetype plugin indent on
+filetype indent on
 " Switch syntax highlighting on when the terminal has colors or when using the
 " GUI (which always has colors).
 " if &t_Co > 2 || has("gui_running")
