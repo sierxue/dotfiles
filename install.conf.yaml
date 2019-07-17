@@ -12,7 +12,6 @@
     ~/.bashrc:
     ~/.config/bspwm: config/bspwm
     ~/.config/sxhkd: config/sxhkd
-    ~/.config/zathura: config/zathura
     ~/.dotfiles: ''
     ~/.gitconfig:
     ~/.local/share/gnome-shell/extensions/putWindow@clemens.lab21.org: gnome-shell-extensions-negesti
