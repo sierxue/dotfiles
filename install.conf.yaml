@@ -15,7 +15,6 @@
     ~/.config/zathura: config/zathura
     ~/.dotfiles: ''
     ~/.gitconfig:
-    ~/.gvimrc:
     ~/.local/share/gnome-shell/extensions/putWindow@clemens.lab21.org: gnome-shell-extensions-negesti
     ~/.nutstore/db/customExtRules.conf: nutstore/db/customExtRules.conf
     ~/.profile:
