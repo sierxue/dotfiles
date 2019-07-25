@@ -64,6 +64,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
+Plug 'zhmars/vim-ibus', {'as': 'ibus'}
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -367,6 +368,10 @@ let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 0
 let g:airline#extensions#ale#enabled = 1
 let g:ale_python_pylint_options = "--init-hook='import sys; sys.path.append(\".\")'"
+
+" zhmars/vim-ibus, {'as': 'ibus'}
+let g:ibus#layout = 'xkb:us::eng'
+let g:ibus#engine = 'libpinyin'
 
 " Default settings
 
