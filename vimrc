@@ -53,6 +53,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'lervag/vimtex'
 Plug 'maralla/completor.vim'
+Plug 'mhinz/vim-startify'
+let g:startify_custom_header = []
 Plug 'nelstrom/vim-americanize'
 Plug 'sillybun/vim-repl/'
 Plug 'skywind3000/asyncrun.vim'
