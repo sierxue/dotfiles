@@ -40,8 +40,24 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " Add other plugins here.
+
 Plug '907th/vim-auto-save'
+let g:auto_save = 1  " enable AutoSave on Vim startup
+"let g:auto_save_silent = 1  " do not display the auto-save notification
+
 Plug 'SirVer/ultisnips'
+" Trigger configuration. Do not use <tab> if you use Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-tab>"
+" begin: https://castel.dev/post/lecture-notes-1/
+let g:UltiSnipsJumpForwardTrigger="<tab>" " default <c-b>
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>" " default <c-z>
+" end: https://castel.dev/post/lecture-notes-1/
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+" To use python version 3.x: >
+let g:UltiSnipsUsePythonVersion = 3
+
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/solarized'
 Plug 'metakirby5/codi.vim'
@@ -52,23 +68,123 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'lervag/vimtex'
+let g:tex_flavor = 'latex'
+" Remove warning message: Can't use callbacks without +clientserver · Issue #507 · lervag/vimtex
+let g:vimtex_compiler_latexmk = {'callback' : 0}
+" Select pdf viewer
+let g:vimtex_view_method = 'zathura'
+" https://castel.dev/post/lecture-notes-1/
+" https://app.yinxiang.com/shard/s22/nl/4928451/de0f809b-c0bc-4774-b459-683696356703
+let g:vimtex_quickfix_mode=0
+" set conceallevel=1
+" let g:tex_conceal='abdmg'
+
+" maralla/completor configuration
+" https://github.com/maralla/completor.vim/issues/41
+let g:completor_tex_omni_trigger =
+        \   '\\(?:'
+        \  .   '\w*cite\w*(?:\s*\[[^]]*\]){0,2}\s*{[^}]*'
+        \  .  '|\w*ref(?:\s*\{[^}]*|range\s*\{[^,}]*(?:}{)?)'
+        \  .  '|hyperref\s*\[[^]]*'
+        \  .  '|includegraphics\*?(?:\s*\[[^]]*\]){0,2}\s*\{[^}]*'
+        \  .  '|(?:include(?:only)?|input)\s*\{[^}]*'
+        \  .')'
+" Use Tab to select completion
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+" Use Tab to trigger completion (disable auto trigger)
+let g:completor_auto_trigger = 1
+" inoremap <expr> <Tab> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
+
 Plug 'maralla/completor.vim'
 Plug 'mhinz/vim-startify'
 let g:startify_custom_header = []
+
 Plug 'nelstrom/vim-americanize'
 Plug 'sillybun/vim-repl/'
+" ganx: revise default <leader>r to <leader>rt
+nnoremap <leader>rt :REPLToggle<Cr>
+"let g:rep_width = None
+"let g:rep_height = None
+let g:sendtorepl_invoke_key = "<leader>w"
+let g:repl_position = 3
+let g:repl_stayatrepl_when_open = 0
+" ganx Revise python to python3, bash to zsh
+let g:repl_program = {
+			\	"python": "python3",
+			\	"default": "zsh"
+			\	}
+let g:repl_exit_commands = {
+			\	"python": "quit()",
+			\	"bash": "exit",
+			\	"zsh": "exit",
+			\	"default": "exit",
+			\	}
+
 Plug 'skywind3000/asyncrun.vim'
 Plug 'takac/vim-hardtime'
+let g:hardtime_default_on = 1
+let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+let g:list_of_visual_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+let g:list_of_insert_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+let g:list_of_disabled_keys = []
+
+let g:hardtime_timeout = 100
+let g:hardtime_showmsg = 1
+let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
+let g:hardtime_ignore_quickfix = 1
+let g:hardtime_allow_different_key = 1
+let g:hardtime_maxcount = 2
+
 Plug 'tmhedberg/SimpylFold'
+let g:SimpylFold_docstring_preview=1
+
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
+" side bar display
+let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
+let g:ale_enabled = 0
+" icon definition
+"let g:ale_sign_error = '✗'
+"let g:ale_sign_warning = '⚡'
+" ALE offers some commands with <Plug> keybinds for moving between
+" warnings and errors quickly.
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+"<Leader>s toggle ale
+nmap <Leader>a :ALEToggle<CR>
+"<Leader>d Look up the details of an error/warning.
+nmap <Leader>d :ALEDetail<CR>
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 0
+let g:airline#extensions#ale#enabled = 1
+let g:ale_python_pylint_options = "--init-hook='import sys; sys.path.append(\".\")'"
+
 Plug 'zhmars/vim-ibus', {'as': 'ibus'}
+let g:ibus#layout = 'xkb:us::eng'
+let g:ibus#engine = 'libpinyin'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+"" Settings for plugins shipped with vim
+
+" netrw https://shapeshed.com/vim-netrw/
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+" augroup ProjectDrawer
+"   autocmd!
+"   autocmd VimEnter * :Vexplore
+" augroup END
 
 "------------------
 " Autocmd
@@ -117,6 +233,8 @@ nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " Mappings related to <Esc> https://news.ycombinator.com/item?id=13100718
 "during insert, kj escapes, `^ is so that the cursor doesn't move.
 inoremap kj <Esc>`^
+"during insert, .kj escapes and go to the next line in insert mode.
+inoremap .kj <Esc>`^o
 "during insert, lkj escapes and saves
 inoremap lkj <Esc>`^:w<CR>
 "during insert, lkj escapes and saves and QUITS
@@ -253,127 +371,6 @@ for d in glob('~/.vim/spell/*.add', 1, 1)
     endif
 endfor
 
-"" Settings for plugins
-
-" 907th/vim-auto-save configuration
-let g:auto_save = 1  " enable AutoSave on Vim startup
-"let g:auto_save_silent = 1  " do not display the auto-save notification
-
-" SirVer/UltiSnips configuration
-" Trigger configuration. Do not use <tab> if you use Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-tab>"
-" begin: https://castel.dev/post/lecture-notes-1/
-let g:UltiSnipsJumpForwardTrigger="<tab>" " default <c-b>
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>" " default <c-z>
-" end: https://castel.dev/post/lecture-notes-1/
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-" To use python version 3.x: >
-let g:UltiSnipsUsePythonVersion = 3
-
-" lervag/vimtex configuration
-let g:tex_flavor = 'latex'
-" Remove warning message: Can't use callbacks without +clientserver · Issue #507 · lervag/vimtex
-let g:vimtex_compiler_latexmk = {'callback' : 0}
-" Select pdf viewer
-let g:vimtex_view_method = 'zathura'
-" https://castel.dev/post/lecture-notes-1/
-" https://app.yinxiang.com/shard/s22/nl/4928451/de0f809b-c0bc-4774-b459-683696356703
-let g:vimtex_quickfix_mode=0
-" set conceallevel=1
-" let g:tex_conceal='abdmg'
-
-" maralla/completor configuration
-" https://github.com/maralla/completor.vim/issues/41
-let g:completor_tex_omni_trigger =
-        \   '\\(?:'
-        \  .   '\w*cite\w*(?:\s*\[[^]]*\]){0,2}\s*{[^}]*'
-        \  .  '|\w*ref(?:\s*\{[^}]*|range\s*\{[^,}]*(?:}{)?)'
-        \  .  '|hyperref\s*\[[^]]*'
-        \  .  '|includegraphics\*?(?:\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-        \  .  '|(?:include(?:only)?|input)\s*\{[^}]*'
-        \  .')'
-" Use Tab to select completion
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
-" Use Tab to trigger completion (disable auto trigger)
-let g:completor_auto_trigger = 1
-" inoremap <expr> <Tab> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
-
-" netrw https://shapeshed.com/vim-netrw/
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-" augroup ProjectDrawer
-"   autocmd!
-"   autocmd VimEnter * :Vexplore
-" augroup END
-
-" sillybun/vim-repl/ configuration
-" ganx: revise default <leader>r to <leader>rt
-nnoremap <leader>rt :REPLToggle<Cr>
-"let g:rep_width = None
-"let g:rep_height = None
-let g:sendtorepl_invoke_key = "<leader>w"
-let g:repl_position = 3
-let g:repl_stayatrepl_when_open = 0
-" ganx Revise python to python3, bash to zsh
-let g:repl_program = {
-			\	"python": "python3",
-			\	"default": "zsh"
-			\	}
-let g:repl_exit_commands = {
-			\	"python": "quit()",
-			\	"bash": "exit",
-			\	"zsh": "exit",
-			\	"default": "exit",
-			\	}
-
-" vim-hardtime
-let g:hardtime_default_on = 1
-let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
-let g:list_of_visual_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
-let g:list_of_insert_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
-let g:list_of_disabled_keys = []
-
-let g:hardtime_timeout = 100
-let g:hardtime_showmsg = 1
-let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
-let g:hardtime_ignore_quickfix = 1
-let g:hardtime_allow_different_key = 1
-let g:hardtime_maxcount = 2
-
-" tmhedberg/SimpylFold configuration
-let g:SimpylFold_docstring_preview=1
-
-" w0rp/ale configuration
-" side bar display
-let g:ale_sign_column_always = 1
-let g:ale_set_highlights = 0
-let g:ale_enabled = 0
-" icon definition
-"let g:ale_sign_error = '✗'
-"let g:ale_sign_warning = '⚡'
-" ALE offers some commands with <Plug> keybinds for moving between
-" warnings and errors quickly.
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-"<Leader>s toggle ale
-nmap <Leader>a :ALEToggle<CR>
-"<Leader>d Look up the details of an error/warning.
-nmap <Leader>d :ALEDetail<CR>
-let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 0
-let g:airline#extensions#ale#enabled = 1
-let g:ale_python_pylint_options = "--init-hook='import sys; sys.path.append(\".\")'"
-
-" zhmars/vim-ibus, {'as': 'ibus'}
-let g:ibus#layout = 'xkb:us::eng'
-let g:ibus#engine = 'libpinyin'
 
 " Default settings
 
