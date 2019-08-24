@@ -235,6 +235,8 @@ nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 inoremap kj <Esc>`^
 "during insert, .kj escapes and go to the next line in insert mode.
 inoremap .kj <Esc>`^o
+"during insert, pkj escapes and go to the line after the next in insert mode.
+inoremap pkj <Esc>`^o<CR>
 "during insert, lkj escapes and saves
 inoremap lkj <Esc>`^:w<CR>
 "during insert, lkj escapes and saves and QUITS
