@@ -166,9 +166,9 @@ let g:ale_completion_enabled = 0
 let g:airline#extensions#ale#enabled = 1
 let g:ale_python_pylint_options = "--init-hook='import sys; sys.path.append(\".\")'"
 
-Plug 'zhmars/vim-ibus', {'as': 'ibus'}
-let g:ibus#layout = 'xkb:us::eng'
-let g:ibus#engine = 'libpinyin'
+"Plug 'zhmars/vim-ibus', {'as': 'ibus'}
+"let g:ibus#layout = 'xkb:us::eng'
+"let g:ibus#engine = 'libpinyin'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
