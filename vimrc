@@ -236,11 +236,11 @@ nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "during insert, kj escapes, `^ is so that the cursor doesn't move.
 inoremap kj <Esc>`^
 "during insert, .kj escapes and go to the next line in insert mode.
-inoremap .kj <Esc>`^o
-"during insert, pkj escapes and go to the line after the next in insert mode.
+inoremap lkj <Esc>`^o
+" during insert, pkj escapes and go to the line after the next in insert mode.
 inoremap pkj <Esc>`^o<CR>
-"during insert, lkj escapes and saves
-inoremap lkj <Esc>`^:w<CR>
+" during insert, lkj escapes and saves
+"inoremap lkj <Esc>`^:w<CR>
 "during insert, lkj escapes and saves and QUITS
 inoremap ;lkj <Esc>:wq<CR>
 "" Settings for utilities
@@ -305,9 +305,10 @@ command! -bang -nargs=* -complete=tag S call SearchMultiLine(<bang>0, <f-args>)|
 filetype indent on
 " Switch syntax highlighting on when the terminal has colors or when using the
 " GUI (which always has colors).
-" if &t_Co > 2 || has("gui_running")
+"if &t_Co > 2 || has("gui_running")
 "   " Revert with ":syntax off".
-syntax on
+"syntax on
+"endif
 
 set showmatch " show matching braces when text indicator is over them
 
