@@ -224,6 +224,8 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 
+nnoremap <F9> :make clean<CR>
+
 " - | reloading vimrc, sourcing it
 " https://stackoverflow.com/questions/1025762/cursor-disappears-in-vim-when-switching-windows-between-vertical-and-horizontal
 nnoremap <leader>sv :source $MYVIMRC<CR>
