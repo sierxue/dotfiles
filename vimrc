@@ -189,6 +189,10 @@ let g:netrw_winsize = 25
 "------------------
 " Autocmd
 "------------------
+" https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
+" Using the autocmd method, you could customize when the directory change
+" takes place. For example, to not change directory if the file is in /tmp:
+autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
