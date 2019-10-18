@@ -228,6 +228,7 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 
+nnoremap <F8> :Gw<CR>
 nnoremap <F9> :make clean<CR>
 
 " - | reloading vimrc, sourcing it
