@@ -93,31 +93,4 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-# a group of git commands
-alias amp="git add --all && git commit -m 'update' && git push"
-
-# https://github.com/ggreer/the_silver_searcher/wiki/Advanced-Usage
-# alias ag="ag --path-to-ignore ~/.ignore" ttst: not working for 0.31.0, shipped with ubuntu 16.04.
-alias ag="ag -p ~/.ignore"
-
-alias grep="grep -I --line-number --color --exclude-dir=\.bzr --exclude-dir=\.git --exclude-dir=\.hg --exclude-dir=\.svn --exclude-dir=build --exclude-dir=dist --exclude=tags"
-
-# http://vim.wikia.com/wiki/Enable_servername_capability_in_vim/xterm
-alias vim='vim --servername vim'
-
-# alias
-alias jn='jupyter notebook'
-alias python=python3
-alias pip=pip3
-alias piu='pip3 install --user'
-alias gg='git gui'
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
