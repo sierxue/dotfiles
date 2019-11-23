@@ -162,6 +162,15 @@ let g:hardtime_maxcount = 2
 
 Plug 'tmhedberg/SimpylFold'
 let g:SimpylFold_docstring_preview=1
+" https://stackoverflow.com/a/7425005/2400133
+" https://www.cnblogs.com/heqiuyu/articles/5630167.html
+set foldmethod=indent
+set foldlevel=0
+set foldnestmax=3
+" Enable folding with the spacebar
+nnoremap <space> za
+" https://stackoverflow.com/a/360634/2400133
+vnoremap <space> zf
 
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
