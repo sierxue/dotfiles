@@ -62,6 +62,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'altercation/solarized'
 Plug 'metakirby5/codi.vim'
 Plug 'davidhalter/jedi-vim'
+" " ganx: revise default <leader>r to <leader>rn
+let g:jedi#rename_command = "<leader>rn"
 Plug 'flazz/vim-colorschemes'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -102,25 +104,46 @@ Plug 'mhinz/vim-startify'
 let g:startify_custom_header = []
 
 Plug 'nelstrom/vim-americanize'
+
+Plug 'sillybun/zytutil'
 Plug 'sillybun/vim-repl/'
-" ganx: revise default <leader>r to <leader>rt
-nnoremap <leader>rt :REPLToggle<Cr>
-"let g:rep_width = None
-"let g:rep_height = None
-let g:sendtorepl_invoke_key = "<leader>w"
-let g:repl_position = 3
-let g:repl_stayatrepl_when_open = 0
-" ganx Revise python to python3, bash to zsh
 let g:repl_program = {
-			\	"python": "python3",
-			\	"default": "zsh"
-			\	}
-let g:repl_exit_commands = {
-			\	"python": "quit()",
-			\	"bash": "exit",
-			\	"zsh": "exit",
-			\	"default": "exit",
-			\	}
+    \   'python': 'ipython',
+    \   'default': 'zsh',
+    \   'r': 'R',
+    \   'lua': 'lua',
+    \   'vim': 'vim -e',
+    \   }
+let g:repl_predefine_python = {
+    \   'numpy': 'import numpy as np',
+    \   'matplotlib': 'from matplotlib import pyplot as plt'
+    \   }
+let g:repl_cursor_down = 1
+let g:repl_python_automerge = 1
+let g:repl_ipython_version = '7'
+nnoremap <leader>r :REPLToggle<Cr>
+autocmd Filetype python nnoremap <F12> <Esc>:REPLDebugStopAtCurrentLine<Cr>
+autocmd Filetype python nnoremap <F10> <Esc>:REPLPDBN<Cr>
+autocmd Filetype python nnoremap <F11> <Esc>:REPLPDBS<Cr>
+let g:repl_position = 3
+" " ganx: old setting.
+" nnoremap <leader>r :REPLToggle<Cr>
+" "let g:rep_width = None
+" "let g:rep_height = None
+" let g:sendtorepl_invoke_key = "<leader>w"
+" let g:repl_position = 3
+" let g:repl_stayatrepl_when_open = 0
+" " ganx Revise python to python3, bash to zsh
+" let g:repl_program = {
+" 			\	"python": "python3",
+" 			\	"default": "zsh"
+" 			\	}
+" let g:repl_exit_commands = {
+" 			\	"python": "quit()",
+" 			\	"bash": "exit",
+" 			\	"zsh": "exit",
+" 			\	"default": "exit",
+" 			\	}
 
 Plug 'skywind3000/asyncrun.vim'
 Plug 'takac/vim-hardtime'
