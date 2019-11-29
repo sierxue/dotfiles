@@ -160,11 +160,15 @@ let g:hardtime_ignore_quickfix = 1
 let g:hardtime_allow_different_key = 1
 let g:hardtime_maxcount = 2
 
+" https://vim.fandom.com/wiki/Folding#Indent_folding_with_manual_folds
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=indent
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END
 Plug 'tmhedberg/SimpylFold'
 let g:SimpylFold_docstring_preview=1
 " https://stackoverflow.com/a/7425005/2400133
 " https://www.cnblogs.com/heqiuyu/articles/5630167.html
-set foldmethod=indent
 set foldlevel=0
 set foldnestmax=3
 " Enable folding with the spacebar
