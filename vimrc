@@ -70,6 +70,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'lervag/vimtex'
+" https://github.com/lervag/vimtex/issues/1369
+let g:vimtex_complier_latexmk_engines ='xelatex'
 let g:tex_flavor = 'latex'
 " Remove warning message: Can't use callbacks without +clientserver · Issue #507 · lervag/vimtex
 let g:vimtex_compiler_latexmk = {'callback' : 0}
