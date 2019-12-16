@@ -250,9 +250,6 @@ endif " has("autocmd")
 
 " Commands - automatic run
 
-" Set wrap
-autocmd VimResized * if (&columns > 76) | set columns=76 | endif
-
 "Change vimrc with auto reload
 autocmd! bufwritepost .vimrc source %
 
@@ -401,8 +398,9 @@ set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 " Set wrap
 " https://stackoverflow.com/questions/989093/soft-wrap-at-80-characters-in-vim-in-window-of-arbitrary-width/989317
-set textwidth=74
 set columns=84
+autocmd VimResized * if (&columns > 76) | set columns=76 | endif
+set textwidth=74
 set wrap
 set linebreak
 set showbreak=+
