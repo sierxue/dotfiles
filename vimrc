@@ -2,6 +2,7 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" .vimrc_customized keeps settings specific to a computer.
 source ~/.vimrc_customized
 
 "------------------------------
@@ -43,6 +44,7 @@ Plug '907th/vim-auto-save'
 let g:auto_save = 1  " enable AutoSave on Vim startup
 "let g:auto_save_silent = 1  " do not display the auto-save notification
 
+Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 " Trigger configuration. Do not use <tab> if you use Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -63,7 +65,6 @@ Plug 'davidhalter/jedi-vim'
 " " ganx: revise default <leader>r to <leader>rn
 let g:jedi#rename_command = "<leader>rn"
 Plug 'flazz/vim-colorschemes'
-Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
@@ -102,6 +103,7 @@ let g:vimtex_quickfix_mode=0
 " set conceallevel=1
 " let g:tex_conceal='abdmg'
 
+Plug 'maralla/completor.vim'
 " maralla/completor configuration
 " https://github.com/maralla/completor.vim/issues/41
 let g:completor_tex_omni_trigger =
@@ -120,13 +122,12 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 let g:completor_auto_trigger = 1
 " inoremap <expr> <Tab> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
 
-Plug 'maralla/completor.vim'
 Plug 'mhinz/vim-startify'
 let g:startify_custom_header = []
 
 Plug 'nelstrom/vim-americanize'
-
 Plug 'sillybun/zytutil'
+
 Plug 'sillybun/vim-repl/'
 let g:repl_program = {
     \   'python': 'ipython',
@@ -167,13 +168,13 @@ let g:repl_position = 3
 " 			\	}
 
 Plug 'skywind3000/asyncrun.vim'
+
 Plug 'takac/vim-hardtime'
 let g:hardtime_default_on = 1
 let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:list_of_visual_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:list_of_insert_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:list_of_disabled_keys = []
-
 let g:hardtime_timeout = 100
 let g:hardtime_showmsg = 1
 let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
@@ -202,6 +203,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
+
 Plug 'w0rp/ale'
 " side bar display
 let g:ale_sign_column_always = 1
