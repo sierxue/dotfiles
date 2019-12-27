@@ -2,9 +2,6 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" .vimrc_customized keeps settings specific to a computer.
-source ~/.vimrc_customized
-
 "------------------------------
 " Load plugin shipped with vim
 "------------------------------
@@ -487,3 +484,6 @@ if has('langmap') && exists('+langremap')
   " compatible).
   set nolangremap
 endif
+
+" .vimrc_customized keeps settings specific to a computer.
+source ~/.vimrc_customized
