@@ -2,6 +2,8 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+source ~/.vimrc_customized
+
 "------------------------------
 " Load plugin shipped with vim
 "------------------------------
@@ -66,11 +68,11 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'lervag/vimtex'
-" https://github.com/lervag/vimtex/issues/1369
-let g:vimtex_complier_latexmk_engines ='xelatex'
 let g:tex_flavor = 'latex'
 " Remove warning message: Can't use callbacks without +clientserver · Issue #507 · lervag/vimtex
 let g:vimtex_compiler_latexmk = {'callback' : 0}
+" https://github.com/lervag/vimtex/issues/1369
+let g:vimtex_complier_latexmk_engines ='xelatex'
 " Select pdf viewer
 let g:vimtex_view_method = 'zathura'
 " https://castel.dev/post/lecture-notes-1/
@@ -462,5 +464,3 @@ if has('langmap') && exists('+langremap')
   " compatible).
   set nolangremap
 endif
-
-source ~/.vimrc_customized
