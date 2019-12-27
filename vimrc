@@ -94,36 +94,6 @@ let g:vimtex_compiler_latexmk_engines = {
     \ 'context (luatex)' : '-pdf -pdflatex=context',
     \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
 \}
-let g:vimtex_compiler_latexmk_engines = {
-    \ '_'                : '-pdf',
-    \ 'xelatex'          : '-xelatex',
-    \ 'pdflatex'         : '-pdf',
-    \ 'dvipdfex'         : '-pdfdvi',
-    \ 'lualatex'         : '-lualatex',
-    \ 'context (pdftex)' : '-pdf -pdflatex=texexec',
-    \ 'context (luatex)' : '-pdf -pdflatex=context',
-    \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
-\}
-let g:vimtex_compiler_latexmk_engines = {
-    \ '_'                : '-pdf',
-    \ 'xelatex'          : '-xelatex',
-    \ 'pdflatex'         : '-pdf',
-    \ 'dvipdfex'         : '-pdfdvi',
-    \ 'lualatex'         : '-lualatex',
-    \ 'context (pdftex)' : '-pdf -pdflatex=texexec',
-    \ 'context (luatex)' : '-pdf -pdflatex=context',
-    \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
-\}
-let g:vimtex_compiler_latexmk_engines = {
-    \ '_'                : '-pdf',
-    \ 'xelatex'          : '-xelatex',
-    \ 'pdflatex'         : '-pdf',
-    \ 'dvipdfex'         : '-pdfdvi',
-    \ 'lualatex'         : '-lualatex',
-    \ 'context (pdftex)' : '-pdf -pdflatex=texexec',
-    \ 'context (luatex)' : '-pdf -pdflatex=context',
-    \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
-\}
 " Select pdf viewer
 let g:vimtex_view_method = 'zathura'
 " https://castel.dev/post/lecture-notes-1/
