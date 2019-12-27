@@ -2,10 +2,6 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" https://zhuanlan.zhihu.com/p/68191151
-" https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
-set nomodeline
-
 "------------------------------
 " Load plugin shipped with vim
 "------------------------------
