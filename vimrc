@@ -9,18 +9,11 @@ set nocompatible
 filetype plugin on
 
 " https://vim.fandom.com/wiki/Maximize_or_set_initial_window_size
-if has("gui_running")
-  " GUI is running or is about to start.
-" Maximize gvim window (for an alternative on Windows, see simalt below).
-  set lines=38 columns=84
-else
-  " This is console Vim.
-  if exists("+lines")
-    set lines=50
-  endif
-  if exists("+columns")
-    set columns=84
-  endif
+if exists("+lines")
+set lines=50
+endif
+if exists("+columns")
+set columns=84
 endif
 
 "------------------
