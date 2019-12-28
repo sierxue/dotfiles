@@ -16,6 +16,9 @@ if exists("+columns")
 set columns=84
 endif
 
+" https://www.zhihu.com/question/60367881
+" https://github.com/vim/vim/issues/2049#issuecomment-494923065
+set maxmempattern=5000
 "------------------
 " Load vim-plug
 "------------------
