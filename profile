@@ -20,8 +20,8 @@ fi
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 # set PATH for texlive
-PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH; export PATH
-MANPATH=/usr/local/texlive/2019/texmf-dist/doc/man:$MANPATH; export MANPATH
-INFOPATH=/usr/local/texlive/2019/texmf-dist/doc/info:$INFOPATH; export INFOPATH
+# PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH; export PATH
+# MANPATH=/usr/local/texlive/2019/texmf-dist/doc/man:$MANPATH; export MANPATH
+# INFOPATH=/usr/local/texlive/2019/texmf-dist/doc/info:$INFOPATH; export INFOPATH
 
 setxkbmap -option ctrl:nocaps
