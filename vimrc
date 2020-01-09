@@ -413,7 +413,7 @@ set expandtab       " Expand TABs to spaces
 " Set wrap
 " https://stackoverflow.com/questions/989093/soft-wrap-at-80-characters-in-vim-in-window-of-arbitrary-width/989317
 set columns=84
-autocmd VimResized * if (&columns > 76) | set columns=76 | endif
+autocmd VimResized * if (&columns > 74) | set columns=74 | endif
 set textwidth=74
 set wrap
 set linebreak
