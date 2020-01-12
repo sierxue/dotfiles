@@ -96,8 +96,7 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="$HOME/.rbenv/bin:$PATH"
 # Add "if then" to avoid message "/home/ganx/.zsh/settings.zsh:98: command not found: rbenv" when a machine has not installed rbenv.
-if [[ -d "$HOME/.rbenv" ]]
-then
+if [ -d "$HOME/.rbenv" ]; then
     eval "$(rbenv init -)"
     export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 fi
