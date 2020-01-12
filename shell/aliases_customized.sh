@@ -1,1 +1,1 @@
-/home/a/.df/aliases_customized.sh
+~/.df/aliases_customized.sh
