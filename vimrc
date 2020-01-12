@@ -482,4 +482,14 @@ if has('langmap') && exists('+langremap')
 endif
 
 " .vimrc_customized keeps settings specific to a computer.
-source ~/.vimrc_customized
+try
+  source ~/.df/vimrc_customized
+catch
+  " No such file? No problem; just ignore it.
+endtry
+
+try
+  source ~/.vimrc_customized
+catch
+  " No such file? No problem; just ignore it.
+endtry
