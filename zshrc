@@ -55,7 +55,7 @@ source ~/.shell/external.sh
 # Aliases
 source ~/.shell/aliases.sh
 source ~/.shell/aliases_local.sh
-source ~/.shell/aliases_customized.sh
+source ~/.df/aliases_customized.sh
 
 # Custom prompt
 source ~/.zsh/prompt.zsh
