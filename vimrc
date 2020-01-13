@@ -33,6 +33,11 @@ endif
 call plug#begin('~/.vim/plugged')
 " Add other plugins here.
 
+" 2020-01-13 10:45 https://github.com/aymericbeaumet/vim-symlink
+" https://github.com/tpope/vim-fugitive/issues/147#issuecomment-506960242
+Plug 'moll/vim-bbye' " optional dependency
+Plug 'aymericbeaumet/vim-symlink'
+
 Plug '907th/vim-auto-save'
 let g:auto_save = 1  " enable AutoSave on Vim startup
 "let g:auto_save_silent = 1  " do not display the auto-save notification
