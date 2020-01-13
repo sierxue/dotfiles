@@ -283,7 +283,7 @@ nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 
 nnoremap <F8> :Gw<CR>
-nnoremap <F9> :make clean<CR>
+nnoremap <F9> :!git clean -d -x -f<CR>
 
 " - | reloading vimrc, sourcing it
 " https://stackoverflow.com/questions/1025762/cursor-disappears-in-vim-when-switching-windows-between-vertical-and-horizontal
