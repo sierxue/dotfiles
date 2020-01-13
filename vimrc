@@ -323,8 +323,10 @@ endfunc
 
 " Now you can just press F3 any time inside Vi/Vim and you'll get a
 " timestamp like 2016-01-25 Mo 12:44 inserted at the cursor.
-nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
-imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+nmap <F3> i<C-R>=strftime("%Y-%m-%d %I:%M")<CR><Esc>
+" nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y-%m-%d %I:%M")<CR>
+" imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 "------------------
 " Search
 "------------------
