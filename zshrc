@@ -1,32 +1,46 @@
 # Functions
 source ~/.shell/functions.sh
 
-if [ ! -f ~/.df/aliases_customized.sh ]; then
-    touch ~/.df/aliases_customized.sh
-    chmod +x ~/.df/aliases_customized.sh
+if [ ! -d ~/.df/dotfiles-vm-u18 ]; then
+    mkdir ~/.df/dotfiles-vm-u18
+fi
+
+if [ -f ~/.df/aliases_customized.sh ]; then
+    mv ~/.df/aliases_customized.sh ~/.df/dotfiles-vm-u18/aliases_customized.sh
+else
+    if [ ! -f ~/.df/dotfiles-vm-u18/aliases_customized.sh ]; then
+        touch ~/.df/dotfiles-vm-u18/aliases_customized.sh
+        chmod +x ~/.df/dotfiles-vm-u18/aliases_customized.sh
+    fi
 fi
 
 if [ -f ~/.gitconfig_local ]; then
-    mv ~/.gitconfig_local ~/.df/gitconfig_customized
+    mv ~/.gitconfig_local ~/.df/dotfiles-vm-u18/gitconfig_customized
+elif [ -f ~/.df/gitconfig_customized ]; then
+        mv ~/.df/gitconfig_customized ~/.df/dotfiles-vm-u18/gitconfig_customized
 else
-    if [ ! -f ~/.df/gitconfig_customized ]; then
-        touch ~/.df/gitconfig_customized
+    if [ ! -f ~/.df/dotfiles-vm-u18/gitconfig_customized ]; then
+        touch ~/.df/dotfiles-vm-u18/gitconfig_customized
     fi
 fi
 
 if [ -f ~/.gvimrc_customized ]; then
-    mv ~/.gvimrc_customized ~/.df/gvimrc_customized
+    mv ~/.gvimrc_customized ~/.df/dotfiles-vm-u18/gvimrc_customized
+elif [ -f ~/.df/gvimrc_customized ]; then
+        mv ~/.df/gvimrc_customized ~/.df/dotfiles-vm-u18/gvimrc_customized
 else
-    if [ ! -f ~/.df/gvimrc_customized ]; then
-        touch ~/.df/gvimrc_customized
+    if [ ! -f ~/.df/dotfiles-vm-u18/gvimrc_customized ]; then
+        touch ~/.df/dotfiles-vm-u18/gvimrc_customized
     fi
 fi
 
 if [ -f ~/.vimrc_customized ]; then
-    mv ~/.vimrc_customized ~/.df/vimrc_customized
+    mv ~/.vimrc_customized ~/.df/dotfiles-vm-u18/vimrc_customized
+elif [ -f ~/.df/vimrc_customized ]; then
+        mv ~/.df/vimrc_customized ~/.df/dotfiles-vm-u18/vimrc_customized
 else
-    if [ ! -f ~/.df/vimrc_customized ]; then
-        touch ~/.df/vimrc_customized
+    if [ ! -f ~/.df/dotfiles-vm-u18/vimrc_customized ]; then
+        touch ~/.df/dotfiles-vm-u18/vimrc_customized
     fi
 fi
 
@@ -55,7 +69,7 @@ source ~/.shell/external.sh
 # Aliases
 source ~/.shell/aliases.sh
 source ~/.shell/aliases_local.sh
-source ~/.df/aliases_customized.sh
+source ~/.df/dotfiles-vm-u18/aliases_customized.sh
 
 # Custom prompt
 source ~/.zsh/prompt.zsh

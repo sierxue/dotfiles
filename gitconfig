@@ -112,4 +112,4 @@
 
 # Allow local customizations in the .gitconfig_local file
 [include]
-    path = ~/.df/gitconfig_customized
+    path = ~/.df/dotfiles-vm-u18/gitconfig_customized
