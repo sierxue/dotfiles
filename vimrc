@@ -97,9 +97,20 @@ let g:vimtex_compiler_latexmk_engines = {
 let g:vimtex_view_method = 'zathura'
 " https://castel.dev/post/lecture-notes-1/
 " https://app.yinxiang.com/shard/s22/nl/4928451/de0f809b-c0bc-4774-b459-683696356703
-let g:vimtex_quickfix_mode=0
+" let g:vimtex_quickfix_mode=0
 " set conceallevel=1
 " let g:tex_conceal='abdmg'
+" Disable overfull/underfull \hbox.
+let g:vimtex_quickfix_latexlog = {
+        \ 'overfull' : 0,
+        \ 'underfull' : 0,
+        \}
+let g:vimtex_quickfix_ignore_filters = [
+        \ 'FandolSong-Regular',
+        \ 'FandolKai-Regular',
+        \ 'FandolFang-Regular',
+        \ 'Package Fancyhdr Warning',
+        \]
 
 Plug 'maralla/completor.vim'
 " maralla/completor configuration
