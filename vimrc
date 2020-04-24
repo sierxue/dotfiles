@@ -63,7 +63,7 @@ Plug 'davidhalter/jedi-vim'
 " " ganx: revise default <leader>r to <leader>rn
 let g:jedi#rename_command = "<leader>rn"
 Plug 'flazz/vim-colorschemes'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'lervag/vimtex'
