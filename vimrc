@@ -111,6 +111,8 @@ let g:vimtex_quickfix_ignore_filters = [
         \ 'FandolKai-Regular',
         \ 'FandolFang-Regular',
         \ 'Package Fancyhdr Warning',
+        \ 'Package etex Warning',
+        \ 'Empty bibliography',
         \]
 
 Plug 'maralla/completor.vim'
