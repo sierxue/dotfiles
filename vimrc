@@ -443,6 +443,13 @@ set textwidth=74
 set wrap
 set linebreak
 set showbreak=+
+
+" Change the size of fonts of vim (ctrl and "-";　ctrl and "+")
+" Note that this does not work in GVim!
+" Reference https://github.com/wsdjeg/vim-galore-zh_cn
+command! Bigger  :let &guifont = substitute(&guifont, '\d\+$', '\=submatch(0)+1', '')
+command! Smaller :let &guifont = substitute(&guifont, '\d\+$', '\=submatch(0)-1', '')
+
 " Spell settings
 " https://www.ostechnix.com/use-spell-check-feature-vim-text-editor/
 " http://thejakeharding.com/tutorial/2012/06/13/using-spell-check-in-vim.html
