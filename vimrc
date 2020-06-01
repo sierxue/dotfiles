@@ -425,10 +425,12 @@ endif
 " Solve the coding problem of the console
 "language messages zh_CN.utf-8
 
+set encoding=utf-8
 " Terminal coding
 set termencoding=utf-8
 " The coding of current file
-set fileencoding=utf-8
+set fileencodings=ucs-bom,utf-8,gbk,cp936,gb2312,big5,euc-jp,euc-kr,latin1
+
 set number
 "https://stackoverflow.com/questions/1878974/redefine-tab-as-4-spaces
 set tabstop=4       " The width of a TAB is set to 4.
