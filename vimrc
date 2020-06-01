@@ -68,6 +68,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'lervag/vimtex'
 let g:tex_flavor = 'latex'
+" Use this option to disable/enable vimtex improved syntax highlighting.
+" Default value: 1
+let g:vimtex_syntax_enabled=1
 " Remove warning message: Can't use callbacks without +clientserver · Issue #507 · lervag/vimtex
 let g:vimtex_compiler_latexmk = {'callback' : 0}
 " https://github.com/lervag/vimtex/issues/1369
