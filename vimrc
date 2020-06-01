@@ -118,17 +118,14 @@ let g:vimtex_quickfix_ignore_filters = [
         \ 'Empty bibliography',
         \]
 
+" Install coc.nvim:
+" Make sure node and npm are installed. On ubuntu (>= 18.04)
+" sudo apt install nodejs npm
+" Use release branch (recommend)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Install coc-vimtex: In your vim/neovim, run command: :CocInstall coc-vimtex
+
 Plug 'maralla/completor.vim'
-" maralla/completor configuration
-" https://github.com/maralla/completor.vim/issues/41
-let g:completor_tex_omni_trigger =
-        \   '\\(?:'
-        \  .   '\w*cite\w*(?:\s*\[[^]]*\]){0,2}\s*{[^}]*'
-        \  .  '|\w*ref(?:\s*\{[^}]*|range\s*\{[^,}]*(?:}{)?)'
-        \  .  '|hyperref\s*\[[^]]*'
-        \  .  '|includegraphics\*?(?:\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-        \  .  '|(?:include(?:only)?|input)\s*\{[^}]*'
-        \  .')'
 " Use Tab to select completion
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
