@@ -126,13 +126,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Install coc-vimtex: In your vim/neovim, run command: :CocInstall coc-vimtex
 
 Plug 'maralla/completor.vim'
-" Use Tab to select completion
+" Trigger completion automatically (Disable auto trigger by setting 1 as 0)
+let g:completor_auto_trigger = 1
+" Use Tab to select a completion from candidates.
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
-" Use Tab to trigger completion (disable auto trigger)
-let g:completor_auto_trigger = 1
-" inoremap <expr> <Tab> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
 
 Plug 'mhinz/vim-startify'
 let g:startify_custom_header = []
