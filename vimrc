@@ -302,7 +302,6 @@ nnoremap <F8> :Gw<CR>
 nnoremap <F9> :!git clean -d -x -f<CR>
 
 " - | reloading vimrc, sourcing it
-" https://stackoverflow.com/questions/1025762/cursor-disappears-in-vim-when-switching-windows-between-vertical-and-horizontal
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>sg :source $MYGVIMRC<CR>
 "Remove all trailing whitespace by pressing F6
@@ -440,7 +439,7 @@ set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 " Set wrap
-" https://stackoverflow.com/questions/989093/soft-wrap-at-80-characters-in-vim-in-window-of-arbitrary-width/989317
+" https://stackoverflow.com/a/26284471/2400133
 set columns=84
 autocmd VimResized * if (&columns > 74) | set columns=74 | endif
 set textwidth=74
@@ -460,7 +459,7 @@ command! Smaller :let &guifont = substitute(&guifont, '\d\+$', '\=submatch(0)-1'
 "set spell
 set spelllang=en_us
 set spellfile=~/.vim/spell/en.utf-8.add
-" re-generate spl file for spell checking https://vi.stackexchange.com/questions/5050/how-to-share-vim-spellchecking-additions-between-multiple-machines
+" https://vi.stackexchange.com/a/5052/16763
 for d in glob('~/.vim/spell/*.add', 1, 1)
     if filereadable(d) && (!filereadable(d . '.spl') || getftime(d) > getftime(d . '.spl'))
         exec 'mkspell! ' . fnameescape(d)
