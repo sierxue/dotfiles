@@ -118,23 +118,6 @@ let g:vimtex_quickfix_ignore_filters = [
         \ 'Empty bibliography',
         \]
 
-" Install coc.nvim:
-" Make sure node and npm are installed. On ubuntu (>= 18.04)
-" sudo apt install nodejs npm
-" Use release branch (recommend)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Install coc-vimtex: In your vim/neovim, run command: :CocInstall coc-vimtex
-
-Plug 'maralla/completor.vim'
-" Trigger completion automatically (Disable auto trigger by setting 1 as 0)
-let g:completor_auto_trigger = 1
-" Use Tab to select a completion from candidates.
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
-
-Plug 'masawada/completor-dictionary'
-autocmd FileType * execute 'setlocal dictionary='.expand($HOME.'/.vim/dict/'.&filetype.'.dict')
 
 Plug 'mhinz/vim-startify'
 let g:startify_custom_header = []
