@@ -118,6 +118,10 @@ let g:vimtex_quickfix_ignore_filters = [
         \ 'Empty bibliography',
         \]
 
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+let g:deoplete#enable_at_startup = 1
 
 Plug 'mhinz/vim-startify'
 let g:startify_custom_header = []
@@ -228,6 +232,15 @@ let g:ale_python_pylint_options = "--init-hook='import sys; sys.path.append(\".\
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+" Plug 'Shougo/deoplete.nvim' configurations for vimtex
+" https://github.com/lervag/vimtex/issues/1710#issuecomment-637284447
+call deoplete#custom#var('omni', 'input_patterns', {
+        \ 'tex': g:vimtex#re#deoplete
+        \})
+" Plug 'roxma/vim-hug-neovim-rpc' log configurations
+let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
+let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
 
 "" Settings for plugins shipped with vim
 
