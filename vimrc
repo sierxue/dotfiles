@@ -287,7 +287,8 @@ autocmd! bufwritepost .vimrc source %
 "---------------------
 " Key mapping
 "---------------------
-
+" https://vim.fandom.com/wiki/Count_number_of_matches_of_a_pattern
+map ,* *<C-O>:%s///gn<CR>
 " Neil - Practical Vim, Second Edition.pdf P. 85
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
