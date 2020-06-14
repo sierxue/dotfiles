@@ -87,4 +87,8 @@ if [ -f ~/.zshrc_local_after ]; then
     source ~/.zshrc_local_after
 fi
 
+if [ -f ~/.df/dotfiles-local/zshrc_local ]; then
+    source ~/.df/dotfiles-local/zshrc_local
+fi
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
