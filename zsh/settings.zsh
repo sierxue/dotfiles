@@ -2,7 +2,7 @@
 export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/local/vim/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=~/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -56,7 +56,7 @@ alias 'git config --get-regexp alias'= 'nocorrect git config --get-regexp alias'
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 HIST_STAMPS="yyyy-mm-dd"
-HISTFILE=~/.zsh_history
+HISTFILE=$HOME/.zsh_history
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
