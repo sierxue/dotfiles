@@ -1,7 +1,14 @@
 # External plugins (initialized after)
 
-# Syntax highlighting
+# Activate autosuggestions
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# https://github.com/zsh-users/zsh-autosuggestions/issues/255#issuecomment-321879150
+bindkey '^K' up-line-or-history
+#  https://github.com/zsh-users/zsh-autosuggestions#key-bindings
+bindkey '^ ' autosuggest-execute
+#  Alt + Enter bindkey '^^M' autosuggest-execute https://stackoverflow.com/q/43428384/2400133
 
+# Syntax highlighting
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
