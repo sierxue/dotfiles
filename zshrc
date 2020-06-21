@@ -72,7 +72,7 @@ source ~/.shell/aliases_local.sh
 source ~/.df/dotfiles-vm-u18/aliases_customized.sh
 
 # Custom prompt
-source ~/.zsh/prompt.zsh
+# source ~/.zsh/prompt.zsh
 
 # External plugins (initialized after)
 source ~/.zsh/plugins_after.zsh

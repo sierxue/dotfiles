@@ -9,7 +9,19 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="ys"
 # ZSH_THEME="random"
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+if [ ! -d $ZSH/custom/themes/spaceship-prompt ];
+then
+    git clone https://github.com/denysdovhan/spaceship-prompt.git \
+        $ZSH/custom/themes/spaceship-prompt
+    ln -s "$ZSH/custom/themes/spaceship-prompt/spaceship.zsh-theme" \
+        "$ZSH/custom/themes/spaceship.zsh-theme"
+    sudo apt install fonts-powerline # Required by zsh theme denysdovhan/spaceship-prompt.
+fi
+# Customization by ganx. Looks like there is a bug. Battery show is disabled.
+# ref: https://github.com/denysdovhan/spaceship-prompt/issues/296
+SPACESHIP_BATTERY_SHOW=(false)
+ZSH_THEME="spaceship"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
