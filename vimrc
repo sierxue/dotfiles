@@ -121,7 +121,6 @@ let g:vimtex_quickfix_ignore_filters = [
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-let g:deoplete#enable_at_startup = 1
 
 Plug 'mhinz/vim-startify'
 let g:startify_custom_header = []
@@ -169,19 +168,6 @@ let g:repl_position = 3
 " 			\	}
 
 Plug 'skywind3000/asyncrun.vim'
-
-Plug 'takac/vim-hardtime'
-let g:hardtime_default_on = 1
-let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
-let g:list_of_visual_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
-let g:list_of_insert_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
-let g:list_of_disabled_keys = []
-let g:hardtime_timeout = 100
-let g:hardtime_showmsg = 1
-let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
-let g:hardtime_ignore_quickfix = 1
-let g:hardtime_allow_different_key = 1
-let g:hardtime_maxcount = 2
 
 " https://vim.fandom.com/wiki/Folding#Indent_folding_with_manual_folds
 augroup vimrc
@@ -235,6 +221,7 @@ call plug#end()
 
 " Plug 'Shougo/deoplete.nvim' configurations for vimtex
 " https://github.com/lervag/vimtex/issues/1710#issuecomment-637284447
+let g:deoplete#enable_at_startup = 1
 call deoplete#custom#var('omni', 'input_patterns', {
         \ 'tex': g:vimtex#re#deoplete
         \})
