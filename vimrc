@@ -125,6 +125,66 @@ let g:startify_custom_header = []
 
 Plug 'nelstrom/vim-americanize'
 
+Plug 'jpalardy/vim-slime', { 'for': 'python' }
+Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+"------------------------------------------------------------------------------
+" slime configuration
+"------------------------------------------------------------------------------
+" always use vimterminal
+let g:slime_target = 'vimterminal'
+
+" fix paste issues in ipython
+let g:slime_python_ipython = 1
+
+" Open terminal vertically; Make the vim terminal closed automatically.
+let g:slime_vimterminal_config = {"vertical": 1, "term_finish": "close"}
+
+" let g:slime_dont_ask_default = 1
+let g:slime_vimterminal_cmd = "ipython --matplotlib"
+
+"------------------------------------------------------------------------------
+" ipython-cell configuration
+"------------------------------------------------------------------------------
+" Keyboard mappings. <Leader> is \ (backslash) by default
+
+" " map <Leader>r to run script
+" nnoremap <Leader>r :IPythonCellRun<CR>
+
+" map <Leader>R to run script and time the execution
+nnoremap <Leader>R :IPythonCellRunTime<CR>
+
+" map <Leader>C to execute the current cell
+nnoremap <Leader>C :IPythonCellExecuteCell<CR>
+
+" map <Leader>c to execute the current cell and jump to the next cell
+nnoremap <Leader>c :IPythonCellExecuteCellJump<CR>
+
+" map <Leader>l to clear IPython screen
+nnoremap <Leader>l :IPythonCellClear<CR>
+
+" map <Leader>x to close all Matplotlib figure windows
+nnoremap <Leader>x :IPythonCellClose<CR>
+
+" map [c and ]c to jump to the previous and next cell header
+nnoremap [c :IPythonCellPrevCell<CR>
+nnoremap ]c :IPythonCellNextCell<CR>
+
+" map <Leader>h to send the current line or current selection to IPython
+nmap <Leader>h <Plug>SlimeLineSend
+xmap <Leader>h <Plug>SlimeRegionSend
+
+" map <Leader>p to run the previous command
+nnoremap <Leader>p :IPythonCellPrevCommand<CR>
+
+" map <Leader>Q to restart ipython
+nnoremap <Leader>Q :IPythonCellRestart<CR>
+
+" map <Leader>d to start debug mode
+nnoremap <Leader>b :SlimeSend1 %debug<CR>
+
+" map <Leader>q to exit debug mode or IPython
+nnoremap <Leader>q :SlimeSend1 exit<CR>
+
 Plug 'skywind3000/asyncrun.vim'
 
 " https://vim.fandom.com/wiki/Folding#Indent_folding_with_manual_folds
@@ -383,14 +443,14 @@ set tabstop=4       " The width of a TAB is set to 4.
 set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
-" Set wrap
-" https://stackoverflow.com/a/26284471/2400133
-set columns=84
+" " Set wrap
+" " https://stackoverflow.com/a/26284471/2400133
+" set columns=84
+" set textwidth=74
+" set wrap
+" set linebreak
+" set showbreak=+
 autocmd VimResized * if (&columns > 74) | set columns=74 | endif
-set textwidth=74
-set wrap
-set linebreak
-set showbreak=+
 
 " Change the size of fonts of vim (ctrl and "-";　ctrl and "+")
 " Note that this does not work in GVim!
