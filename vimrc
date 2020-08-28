@@ -13,7 +13,7 @@ if exists("+lines")
 set lines=50
 endif
 if exists("+columns")
-set columns=84
+set columns=184
 endif
 
 " https://www.zhihu.com/question/60367881
@@ -61,7 +61,7 @@ Plug 'altercation/solarized'
 Plug 'metakirby5/codi.vim'
 Plug 'davidhalter/jedi-vim'
 " " ganx: revise default <leader>r to <leader>rn
-let g:jedi#rename_command = "<leader>rn"
+" let g:jedi#rename_command = "<leader>rn"
 Plug 'flazz/vim-colorschemes'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -86,16 +86,16 @@ let g:vimtex_compiler_latexmk = {'callback' : 0}
 "     \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
 " \}
 " The default setting is changed to the following:
-let g:vimtex_compiler_latexmk_engines = {
-    \ '_'                : '-pdf',
-    \ 'xelatex'          : '-xelatex',
-    \ 'pdflatex'         : '-pdf',
-    \ 'dvipdfex'         : '-pdfdvi',
-    \ 'lualatex'         : '-lualatex',
-    \ 'context (pdftex)' : '-pdf -pdflatex=texexec',
-    \ 'context (luatex)' : '-pdf -pdflatex=context',
-    \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
-\}
+" let g:vimtex_compiler_latexmk_engines = {
+"     \ '_'                : '-pdf',
+"     \ 'xelatex'          : '-xelatex',
+"     \ 'pdflatex'         : '-pdf',
+"     \ 'dvipdfex'         : '-pdfdvi',
+"     \ 'lualatex'         : '-lualatex',
+"     \ 'context (pdftex)' : '-pdf -pdflatex=texexec',
+"     \ 'context (luatex)' : '-pdf -pdflatex=context',
+"     \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
+" \}
 " Select pdf viewer
 let g:vimtex_view_method = 'zathura'
 " https://castel.dev/post/lecture-notes-1/
@@ -104,10 +104,6 @@ let g:vimtex_view_method = 'zathura'
 " set conceallevel=1
 " let g:tex_conceal='abdmg'
 " Disable overfull/underfull \hbox.
-let g:vimtex_quickfix_latexlog = {
-        \ 'overfull' : 0,
-        \ 'underfull' : 0,
-        \}
 let g:vimtex_quickfix_ignore_filters = [
         \ 'FandolSong-Regular',
         \ 'FandolHei-Regular',
@@ -116,6 +112,8 @@ let g:vimtex_quickfix_ignore_filters = [
         \ 'Package Fancyhdr Warning',
         \ 'Package etex Warning',
         \ 'Empty bibliography',
+        \ 'Underfull',
+        \ 'Overfull',
         \]
 
 Plug 'Shougo/deoplete.nvim'
